@@ -17,7 +17,7 @@ public class ExpenseDaoTests {
     @Test
     @Order(1)
     void create_expense_test(){
-        Expense expense = new Expense("Bought a burger", ExpenseType.FOOD,7);
+        Expense expense = new Expense("Bought a burger", ExpenseType.Food,1,7);
         Expense savedExpense = expenseDAO.createExpense(expense);
         Assertions.assertEquals(1,savedExpense.getId());
     }
@@ -46,7 +46,7 @@ public class ExpenseDaoTests {
     @Test
     @Order(5)
     void update_expense_test(){
-        Expense expense = new Expense("Bought a taco",ExpenseType.FOOD,7);
+        Expense expense = new Expense("Bought a taco",ExpenseType.Food,1,7);
         Expense updatedExpense = expenseDAO.updateExpense(1,expense);
         Assertions.assertEquals("Bought a taco",updatedExpense.getDescription());
     }

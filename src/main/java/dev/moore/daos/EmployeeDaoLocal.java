@@ -31,6 +31,10 @@ public class EmployeeDaoLocal implements EmployeeDAO{
 
     @Override
     public Employee updateEmployee(int id, Employee employee) {
+        Employee unUpdatedEmployee = employeeTable.get(id);
+        if(unUpdatedEmployee == null){
+            return null;
+        }
         employee.setId(id);
         employeeTable.put(id, employee);
         return employeeTable.get(employee.getId());

@@ -15,7 +15,7 @@ public class ExpenseServiceImpl implements ExpenseService{
     }
 
     @Override
-    public Expense RegisterExpense(Expense expense) {
+    public Expense registerExpense(Expense expense) {
         if(expense.getExpenseValue() < 0){
             return null;
         }else{
@@ -40,6 +40,9 @@ public class ExpenseServiceImpl implements ExpenseService{
 
     @Override
     public Expense approveExpenseStatus(int id) {
+        if(this.expenseDAO.getExpenseById(id) == null){
+            return null;
+        }
         if(this.expenseDAO.getExpenseById(id).getExpenseStatus() != ExpenseStatus.Pending) {
             return null;
         }else{
@@ -49,6 +52,9 @@ public class ExpenseServiceImpl implements ExpenseService{
 
     @Override
     public Expense denyExpenseStatus(int id) {
+        if(this.expenseDAO.getExpenseById(id) == null){
+            return null;
+        }
         if(this.expenseDAO.getExpenseById(id).getExpenseStatus() != ExpenseStatus.Pending) {
             return null;
         }else{

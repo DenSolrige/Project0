@@ -52,6 +52,9 @@ public class ExpenseDaoLocal implements ExpenseDAO{
     @Override
     public Expense denyExpenseStatus(int id) {
         Expense expense = expenseTable.get(id);
+        if(expense == null){
+            return null;
+        }
         expense.setExpenseStatus(ExpenseStatus.Denied);
         expenseTable.put(id,expense);
         return expenseTable.put(id,expense);
@@ -60,6 +63,9 @@ public class ExpenseDaoLocal implements ExpenseDAO{
     @Override
     public Expense approveExpenseStatus(int id) {
         Expense expense = expenseTable.get(id);
+        if(expense == null){
+            return null;
+        }
         expense.setExpenseStatus(ExpenseStatus.Approved);
         expenseTable.put(id,expense);
         return expenseTable.put(id,expense);

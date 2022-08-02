@@ -3,21 +3,17 @@ package dev.moore.api;
 public class Expense {
 
     private int id;
-
-    //private String status = "Pending"; //pending, approved, or denied
     private ExpenseStatus expenseStatus = ExpenseStatus.Pending;
-
     private String description;
-    private ExpenseType expenseType; //determines priority
-
-    //private int issuerId;
-    private Employee employee;
-
+    private ExpenseType expenseType;
+    private int issuerId;
     private int expenseValue;
 
-    public Expense(String description, ExpenseType expenseType, int expenseValue) {
+    public Expense(){}
+    public Expense(String description, ExpenseType expenseType, int issuerId, int expenseValue) {
         this.description = description;
         this.expenseType = expenseType;
+        this.issuerId = issuerId;
         this.expenseValue = expenseValue;
     }
 
@@ -45,20 +41,20 @@ public class Expense {
         this.description = description;
     }
 
-    public ExpenseType getType() {
+    public ExpenseType getExpenseType() {
         return expenseType;
     }
 
-    public void setType(ExpenseType expenseType) {
+    public void setExpenseType(ExpenseType expenseType) {
         this.expenseType = expenseType;
     }
 
-    public Employee getEmployee() {
-        return employee;
+    public int getIssuerId() {
+        return issuerId;
     }
 
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
+    public void setIssuerId(int issuerId) {
+        this.issuerId = issuerId;
     }
 
     public int getExpenseValue() {
@@ -75,8 +71,8 @@ public class Expense {
                 "id=" + id +
                 ", expenseStatus=" + expenseStatus +
                 ", description='" + description + '\'' +
-                ", type=" + expenseType +
-                ", employee=" + employee +
+                ", expenseType=" + expenseType +
+                ", issuerId=" + issuerId +
                 ", expenseValue=" + expenseValue +
                 '}';
     }

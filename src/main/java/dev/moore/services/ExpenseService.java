@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ExpenseService {
 
-    Expense RegisterExpense(Expense expense);
+    Expense registerExpense(Expense expense);
     List<Expense> getAllExpenses();
     List<Expense> getExpensesByStatus(ExpenseStatus status);
     Expense getExpenseById(int id);
