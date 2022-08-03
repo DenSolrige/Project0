@@ -1,7 +1,7 @@
 package dev.moore.handlers.employees;
 
 import com.google.gson.Gson;
-import dev.moore.api.Employee;
+import dev.moore.entities.Employee;
 import dev.moore.app.App;
 import io.javalin.http.Context;
 import io.javalin.http.Handler;

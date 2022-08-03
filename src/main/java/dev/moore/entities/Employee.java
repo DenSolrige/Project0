@@ -1,12 +1,11 @@
-package dev.moore.api;
-
-import java.util.List;
-import java.util.Objects;
+package dev.moore.entities;
 
 public class Employee {
     private int id;
     private String firstName;
     private String lastName;
+
+    public Employee(){}
 
     public Employee(String firstName, String lastName) {
         this.firstName = firstName;

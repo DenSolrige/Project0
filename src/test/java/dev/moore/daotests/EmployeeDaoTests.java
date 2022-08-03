@@ -1,17 +1,40 @@
 package dev.moore.daotests;
 
 
-import dev.moore.api.Employee;
+import dev.moore.entities.Employee;
 import dev.moore.daos.EmployeeDAO;
-import dev.moore.daos.EmployeeDaoLocal;
+import dev.moore.daos.EmployeeDaoPostgres;
+import dev.moore.utils.ConnectionUtil;
 import org.junit.jupiter.api.*;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class EmployeeDaoTests {
 
-    static EmployeeDAO employeeDAO = new EmployeeDaoLocal();
+    static EmployeeDAO employeeDAO = new EmployeeDaoPostgres();
+
+    @BeforeAll
+    static void setup(){
+        try(Connection conn = ConnectionUtil.createConnection()){
+            String sql = "create table employee(\n" +
+                    "\n" +
+                    "\tid serial primary key,\n" +
+                    "\tfirst_name varchar(100) not null,\n" +
+                    "\tlast_name varchar(100) not null\n" +
+                    "\t\n" +
+                    ");";
+
+            Statement statement = conn.createStatement();
+            statement.execute(sql);
+
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+    }
 
     @Test
     @Order(1)

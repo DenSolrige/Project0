@@ -1,7 +1,7 @@
 package dev.moore.daos;
 
-import dev.moore.api.Expense;
-import dev.moore.api.ExpenseStatus;
+import dev.moore.entities.Expense;
+import dev.moore.entities.ExpenseStatus;
 
 import java.util.List;
 
@@ -13,6 +13,7 @@ public interface ExpenseDAO {
     //Read
     List<Expense> getAllExpenses();
     List<Expense> getExpensesByStatus(ExpenseStatus status);
+    List<Expense> getExpensesByIssuerId(int issuerId);
     Expense getExpenseById(int id);
 
     //Update

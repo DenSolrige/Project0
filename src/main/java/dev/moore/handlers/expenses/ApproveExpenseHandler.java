@@ -1,6 +1,6 @@
 package dev.moore.handlers.expenses;
 
-import dev.moore.api.Expense;
+import dev.moore.entities.Expense;
 import dev.moore.app.App;
 import io.javalin.http.Context;
 import io.javalin.http.Handler;

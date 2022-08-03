@@ -1,4 +1,4 @@
-package dev.moore.api;
+package dev.moore.entities;
 
 public enum ExpenseStatus {
     Pending,

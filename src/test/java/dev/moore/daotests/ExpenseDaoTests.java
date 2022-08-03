@@ -1,8 +1,8 @@
 package dev.moore.daotests;
 
-import dev.moore.api.Expense;
-import dev.moore.api.ExpenseStatus;
-import dev.moore.api.ExpenseType;
+import dev.moore.entities.Expense;
+import dev.moore.entities.ExpenseStatus;
+import dev.moore.entities.ExpenseType;
 import dev.moore.daos.ExpenseDAO;
 import dev.moore.daos.ExpenseDaoLocal;
 import org.junit.jupiter.api.*;

@@ -1,4 +1,4 @@
-package dev.moore.api;
+package dev.moore.entities;
 
 public class Expense {
 

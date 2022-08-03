@@ -1,7 +1,7 @@
 package dev.moore.daos;
 
-import dev.moore.api.Expense;
-import dev.moore.api.ExpenseStatus;
+import dev.moore.entities.Expense;
+import dev.moore.entities.ExpenseStatus;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -35,6 +35,11 @@ public class ExpenseDaoLocal implements ExpenseDAO{
             }
         }
         return expenseListOfStatus;
+    }
+
+    @Override
+    public List<Expense> getExpensesByIssuerId(int issuerId) {
+        return null;
     }
 
     @Override

@@ -1,13 +1,11 @@
 package dev.moore.handlers.expenses;
 
 import com.google.gson.Gson;
-import dev.moore.api.Expense;
+import dev.moore.entities.Expense;
 import dev.moore.app.App;
 import io.javalin.http.Context;
 import io.javalin.http.Handler;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.NoSuchElementException;
 
 public class UpdateExpenseHandler implements Handler {
 

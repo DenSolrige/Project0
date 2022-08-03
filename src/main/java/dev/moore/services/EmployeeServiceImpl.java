@@ -1,6 +1,6 @@
 package dev.moore.services;
 
-import dev.moore.api.Employee;
+import dev.moore.entities.Employee;
 import dev.moore.daos.EmployeeDAO;
 
 import java.util.List;

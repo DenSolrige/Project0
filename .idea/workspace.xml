@@ -4,22 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92ec5af3-9434-403e-8eb1-cf4ced52fb94" name="Changes" comment="Everything!">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/expenses/ApproveExpenseHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/expenses/DeleteExpenseHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/expenses/DenyExpenseHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/expenses/GetAllExpensesHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/expenses/GetExpenseByIdHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/expenses/GetExpenseByStatusHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/expenses/UpdateExpenseHandler.java" afterDir="false" />
+    <list default="true" id="92ec5af3-9434-403e-8eb1-cf4ced52fb94" name="Changes" comment="Everything! Missing nested routes">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/moore/daos/EmployeeDaoPostgres.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/moore/utils/ConnectionUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/dev/moore/smoketests/ConnectionTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/api/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/api/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/api/Expense.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/api/Expense.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/api/ExpenseType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/api/ExpenseType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/app/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/api/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/entities/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/api/Expense.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/entities/Expense.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/api/ExpenseStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/entities/ExpenseStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/api/ExpenseType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/entities/ExpenseType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/daos/EmployeeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/daos/EmployeeDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/daos/EmployeeDaoLocal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/daos/EmployeeDaoLocal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/daos/ExpenseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/daos/ExpenseDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/daos/ExpenseDaoLocal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/daos/ExpenseDaoLocal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/employees/AddEmployeeHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/employees/AddEmployeeHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/employees/GetAllEmployeesHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/employees/GetAllEmployeesHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/employees/GetEmployeeByIdHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/employees/GetEmployeeByIdHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/employees/UpdateEmployeeHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/employees/UpdateEmployeeHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/expenses/AddExpenseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/expenses/AddExpenseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/expenses/ApproveExpenseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/expenses/ApproveExpenseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/expenses/DeleteExpenseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/expenses/DeleteExpenseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/expenses/DenyExpenseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/expenses/DenyExpenseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/expenses/GetAllExpensesHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/expenses/GetAllExpensesHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/expenses/GetExpenseByIdHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/expenses/GetExpenseByIdHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/expenses/GetExpenseByStatusHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/expenses/GetExpenseByStatusHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/expenses/UpdateExpenseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/expenses/UpdateExpenseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/services/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/services/EmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/services/EmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/services/EmployeeServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/services/ExpenseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/services/ExpenseService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/services/ExpenseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/services/ExpenseServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/dev/moore/daotests/EmployeeDaoTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dev/moore/daotests/EmployeeDaoTests.java" afterDir="false" />
@@ -68,7 +80,7 @@
       <recent name="dev.moore.handlers.employees" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.App">
+  <component name="RunManager" selected="Gradle.EmployeeDaoTests">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dev.moore.app.App" />
       <module name="Project0.main" />
@@ -81,6 +93,29 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="ConnectionTests (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;dev.moore.smoketests.ConnectionTests&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
     </configuration>
     <configuration name="EmployeeDaoTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -153,8 +188,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.ExpenseDaoTests" />
         <item itemvalue="Gradle.EmployeeDaoTests" />
+        <item itemvalue="Gradle.ConnectionTests (1)" />
+        <item itemvalue="Gradle.ExpenseDaoTests" />
         <item itemvalue="Application.App" />
         <item itemvalue="Gradle.EmployeeDaoTests.create_employee_test" />
       </list>
@@ -176,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659388787040</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Everything! Missing nested routes">
+      <created>1659479729127</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1659479729127</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -192,6 +235,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Everything!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Everything!" />
+    <MESSAGE value="Everything! Missing nested routes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Everything! Missing nested routes" />
   </component>
 </project>

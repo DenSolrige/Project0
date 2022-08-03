@@ -1,7 +1,7 @@
 package dev.moore.services;
 
-import dev.moore.api.Expense;
-import dev.moore.api.ExpenseStatus;
+import dev.moore.entities.Expense;
+import dev.moore.entities.ExpenseStatus;
 
 import java.util.List;
 

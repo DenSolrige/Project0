@@ -1,14 +1,13 @@
 package dev.moore.handlers.expenses;
 
 import com.google.gson.Gson;
-import dev.moore.api.Expense;
-import dev.moore.api.ExpenseStatus;
+import dev.moore.entities.Expense;
+import dev.moore.entities.ExpenseStatus;
 import dev.moore.app.App;
 import io.javalin.http.Context;
 import io.javalin.http.Handler;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class GetAllExpensesHandler implements Handler {
