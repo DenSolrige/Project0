@@ -17,7 +17,7 @@ public interface ExpenseDAO {
     Expense getExpenseById(int id);
 
     //Update
-    Expense updateExpense(int id, Expense expense);
+    Expense updateExpense(Expense expense);
     Expense approveExpenseStatus(int id);
     Expense denyExpenseStatus(int id);
 

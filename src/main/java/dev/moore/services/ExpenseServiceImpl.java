@@ -34,6 +34,11 @@ public class ExpenseServiceImpl implements ExpenseService{
     }
 
     @Override
+    public List<Expense> getExpenseByIssuerId(int id) {
+        return this.expenseDAO.getExpensesByIssuerId(id);
+    }
+
+    @Override
     public Expense getExpenseById(int id) {
         return this.expenseDAO.getExpenseById(id);
     }
@@ -63,12 +68,12 @@ public class ExpenseServiceImpl implements ExpenseService{
     }
 
     @Override
-    public Expense updateExpense(int id, Expense expense) {
-        if(this.expenseDAO.getExpenseById(id).getExpenseStatus() != ExpenseStatus.Pending
+    public Expense updateExpense(Expense expense) {
+        if(this.expenseDAO.getExpenseById(expense.getId()).getExpenseStatus() != ExpenseStatus.Pending
             || expense.getExpenseValue() < 0){ //move expense value check to handler
             return null;
         }
-        return this.expenseDAO.updateExpense(id,expense);
+        return this.expenseDAO.updateExpense(expense);
     }
 
     @Override

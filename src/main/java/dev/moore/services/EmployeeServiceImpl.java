@@ -29,8 +29,8 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
 
     @Override
-    public Employee updateEmployee(int id, Employee employee) {
-        return this.employeeDAO.updateEmployee(id,employee);
+    public Employee updateEmployee(Employee employee) {
+        return this.employeeDAO.updateEmployee(employee);
     }
 
     @Override

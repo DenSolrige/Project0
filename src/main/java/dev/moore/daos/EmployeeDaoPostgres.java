@@ -27,8 +27,8 @@ public class EmployeeDaoPostgres implements EmployeeDAO{
 
         }catch(SQLException e){
             e.printStackTrace();
+            return null;
         }
-        return null;
     }
 
     @Override
@@ -75,14 +75,14 @@ public class EmployeeDaoPostgres implements EmployeeDAO{
     }
 
     @Override
-    public Employee updateEmployee(int id, Employee employee) {
+    public Employee updateEmployee(Employee employee) {
         try(Connection conn = ConnectionUtil.createConnection()){
             String sql = "update employee set first_name = ?, last_name = ? where id = ?";
             PreparedStatement ps = conn.prepareStatement(sql);
 
             ps.setString(1,employee.getFirstName());
             ps.setString(2,employee.getLastName());
-            ps.setInt(3,id);
+            ps.setInt(3,employee.getId());
 
             int result = ps.executeUpdate();
             return employee;

@@ -63,7 +63,8 @@ public class EmployeeDaoTests {
     @Order(4)
     void update_employee_test(){
         Employee employee = new Employee("Billy","Bobson");
-        employeeDAO.updateEmployee(1, employee);
+        employee.setId(1);
+        employeeDAO.updateEmployee(employee);
         Assertions.assertEquals("Billy",employeeDAO.getEmployeeById(1).getFirstName());
     }
 

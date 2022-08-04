@@ -9,7 +9,7 @@ public interface EmployeeService {
     Employee registerEmployee(Employee employee);
     List<Employee> getAllEmployees();
     Employee getEmployeeById(int id);
-    Employee updateEmployee(int id, Employee employee);
+    Employee updateEmployee(Employee employee);
     boolean deleteEmployeeById(int id);
 
 }

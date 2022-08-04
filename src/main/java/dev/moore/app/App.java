@@ -1,7 +1,9 @@
 package dev.moore.app;
 
 import dev.moore.daos.EmployeeDaoLocal;
+import dev.moore.daos.EmployeeDaoPostgres;
 import dev.moore.daos.ExpenseDaoLocal;
+import dev.moore.daos.ExpenseDaoPostgres;
 import dev.moore.handlers.employees.*;
 import dev.moore.handlers.expenses.*;
 import dev.moore.services.EmployeeService;
@@ -12,8 +14,8 @@ import io.javalin.Javalin;
 
 public class App {
 
-    public static EmployeeService employeeService = new EmployeeServiceImpl(new EmployeeDaoLocal());
-    public static ExpenseService expenseService = new ExpenseServiceImpl(new ExpenseDaoLocal());
+    public static EmployeeService employeeService = new EmployeeServiceImpl(new EmployeeDaoPostgres());
+    public static ExpenseService expenseService = new ExpenseServiceImpl(new ExpenseDaoPostgres());
 
     public static void main(String[] args) {
         Javalin app = Javalin.create();
@@ -26,8 +28,8 @@ public class App {
 
         AddExpenseHandler addExpenseHandler = new AddExpenseHandler();
         GetAllExpensesHandler getAllExpensesHandler = new GetAllExpensesHandler();
-//        GetExpenseByStatusHandler getExpenseByStatusHandler = new GetExpenseByStatusHandler();
         GetExpenseByIdHandler getExpenseByIdHandler = new GetExpenseByIdHandler();
+        GetExpenseByIssuerId getExpenseByIssuerId = new GetExpenseByIssuerId();
         UpdateExpenseHandler updateExpenseHandler = new UpdateExpenseHandler();
         ApproveExpenseHandler approveExpenseHandler = new ApproveExpenseHandler();
         DenyExpenseHandler denyExpenseHandler = new DenyExpenseHandler();
@@ -41,14 +43,13 @@ public class App {
 
         app.post("/expenses",addExpenseHandler); //returns 201
         app.get("/expenses",getAllExpensesHandler);
-//        app.get("/expenses?status=",getExpenseByStatusHandler); //also can get status approved or denied
         app.get("/expenses/{id}",getExpenseByIdHandler); //returns 404 if expense not found
         app.put("/expenses/{id}",updateExpenseHandler); //returns 404 if expense not found
         app.patch("/expenses/{id}/approve",approveExpenseHandler); //returns 404 if expense not found
         app.patch("/expenses/{id}/deny",denyExpenseHandler); //returns 404 if expense not found
         app.delete("/expenses/{id}",deleteExpenseHandler); //returns 404 if expense not found or returns 422 if expense is already approved or denied
 
-//        app.get("/employees/{id}/expenses",null); //returns expenses for employees 120
+        app.get("/employees/{id}/expenses",getExpenseByIssuerId); //returns expenses for employees 120
 //        app.post("/employees/{id}/expenses",null); //adds an expense to employee 120
 
         app.start();

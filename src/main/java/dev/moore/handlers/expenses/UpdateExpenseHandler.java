@@ -15,14 +15,14 @@ public class UpdateExpenseHandler implements Handler {
         Gson gson = new Gson();
         String json = ctx.body();
         Expense expense = gson.fromJson(json, Expense.class); // could throw exception if user doesn't use right values for enums
-
+        expense.setId(id);
         if(expense.getExpenseType() == null){
             ctx.status(422);
             ctx.result("Expense update failed, make sure that ExpenseType is either LODGING, TRAVEL, FOOD, or MISC");
             return;
         }
 
-        Expense registeredExpense = App.expenseService.updateExpense(id,expense);
+        Expense registeredExpense = App.expenseService.updateExpense(expense);
         if (registeredExpense == null){
             ctx.status(422);
             ctx.result("Expense with given id not found");

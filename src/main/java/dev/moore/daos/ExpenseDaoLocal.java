@@ -48,9 +48,8 @@ public class ExpenseDaoLocal implements ExpenseDAO{
     }
 
     @Override
-    public Expense updateExpense(int id, Expense expense) {
-        expense.setId(id);
-        expenseTable.put(id,expense);
+    public Expense updateExpense(Expense expense) {
+        expenseTable.put(expense.getId(),expense);
         return expenseTable.get(expense.getId());
     }
 

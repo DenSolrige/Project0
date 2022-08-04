@@ -14,7 +14,8 @@ public class UpdateEmployeeHandler implements Handler {
         Gson gson = new Gson();
         String json = ctx.body();
         Employee employee = gson.fromJson(json,Employee.class);
-        Employee updatedEmployee = App.employeeService.updateEmployee(id,employee);
+        employee.setId(id);
+        Employee updatedEmployee = App.employeeService.updateEmployee(employee);
         if (updatedEmployee == null){
             ctx.status(404);
             ctx.result("Employee with given id not found");
