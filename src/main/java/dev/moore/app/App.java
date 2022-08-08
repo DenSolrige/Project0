@@ -34,6 +34,7 @@ public class App {
         ApproveExpenseHandler approveExpenseHandler = new ApproveExpenseHandler();
         DenyExpenseHandler denyExpenseHandler = new DenyExpenseHandler();
         DeleteExpenseHandler deleteExpenseHandler = new DeleteExpenseHandler();
+        AddExpenseToEmployeeHandler addExpenseToEmployeeHandler = new AddExpenseToEmployeeHandler();
 
         app.post("/employees",addEmployeeHandler); //returns 201
         app.get("/employees",getAllEmployeesHandler);
@@ -50,7 +51,7 @@ public class App {
         app.delete("/expenses/{id}",deleteExpenseHandler); //returns 404 if expense not found or returns 422 if expense is already approved or denied
 
         app.get("/employees/{id}/expenses",getExpenseByIssuerId); //returns expenses for employees 120
-//        app.post("/employees/{id}/expenses",null); //adds an expense to employee 120
+        app.post("/employees/{id}/expenses",addExpenseToEmployeeHandler); //adds an expense to employee 120
 
         app.start();
     }

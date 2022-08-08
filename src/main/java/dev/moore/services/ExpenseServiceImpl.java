@@ -78,6 +78,10 @@ public class ExpenseServiceImpl implements ExpenseService{
 
     @Override
     public boolean deleteExpenseById(int id) {
+        Expense expense =  this.expenseDAO.getExpenseById(id);
+        if(expense == null){
+            return false;
+        }
         if(this.expenseDAO.getExpenseById(id).getExpenseStatus() != ExpenseStatus.Pending) {
             return false;
         }else {

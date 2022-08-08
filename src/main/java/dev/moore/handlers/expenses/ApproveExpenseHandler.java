@@ -18,7 +18,7 @@ public class ApproveExpenseHandler implements Handler {
                 ctx.status(404);
                 ctx.result("Expense with given ID not found");
             }else{
-                ctx.status(405);
+                ctx.status(422);
                 ctx.result("Expense with given ID has already been " + unUpdatedExpense.getExpenseStatus().toString().toLowerCase());
             }
             return;

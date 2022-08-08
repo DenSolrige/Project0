@@ -1,32 +1,28 @@
 package dev.moore.handlers.expenses;
 
-
 import com.google.gson.Gson;
-import dev.moore.entities.Expense;
 import dev.moore.app.App;
+import dev.moore.entities.Expense;
 import io.javalin.http.Context;
 import io.javalin.http.Handler;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.NoSuchElementException;
 
-public class AddExpenseHandler implements Handler {
+public class AddExpenseToEmployeeHandler implements Handler {
 
     @Override
     public void handle(@NotNull Context ctx) throws Exception {
+        int issuerId = Integer.parseInt(ctx.pathParam("id"));
         Gson gson = new Gson();
         String json = ctx.body();
         try{
             Expense expense = gson.fromJson(json, Expense.class); // could throw exception if user doesn't use right values for enums
+            expense.setIssuerId(issuerId);
             Expense registeredExpense = App.expenseService.registerExpense(expense);
             if (registeredExpense == null){
-                if(expense.getExpenseValue() < 0){
-                    ctx.status(422);
-                    ctx.result("Expense add failed, make sure that the value is non-negative");
-                }else{
-                    ctx.status(404);
-                    ctx.result("Expense add failed, employee with given id not found");
-                }
+                ctx.status(422);
+                ctx.result("Expense add failed, make sure that the value is non-negative");
                 return;
             }else {
                 String registeredJson = gson.toJson(registeredExpense);

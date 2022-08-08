@@ -14,16 +14,17 @@ public class DeleteExpenseHandler implements Handler {
         boolean result = App.expenseService.deleteExpenseById(id);
         if(result){
             ctx.status(204);
-            ctx.result("Expense approved!");
+            ctx.result("Expense deleted");
             return;
         }else{
             Expense expense = App.expenseService.getExpenseById(id);
-            if(expense.getExpenseStatus() != ExpenseStatus.Pending){
-                ctx.status(422);
-                ctx.result("Expense with given ID has already been " + expense.getExpenseStatus().toString().toLowerCase());
-            }else {
+            if(expense == null){
                 ctx.status(404);
                 ctx.result("Expense with given ID not found");
+
+            }else {
+                ctx.status(422);
+                ctx.result("Expense with given ID has already been " + expense.getExpenseStatus().toString().toLowerCase());
             }
         }
     }

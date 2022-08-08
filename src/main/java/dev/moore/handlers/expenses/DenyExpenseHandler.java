@@ -18,7 +18,7 @@ public class DenyExpenseHandler implements Handler {
                 ctx.result("Expense with given ID not found");
                 return;
             }else{
-                ctx.status(405);
+                ctx.status(422);
                 ctx.result("Expense with given ID has already been " + unUpdatedExpense.getExpenseStatus().toString().toLowerCase());
                 return;
             }
