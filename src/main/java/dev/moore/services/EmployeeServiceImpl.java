@@ -30,6 +30,9 @@ public class EmployeeServiceImpl implements EmployeeService{
 
     @Override
     public Employee updateEmployee(Employee employee) {
+        if(this.employeeDAO.getEmployeeById(employee.getId()) == null){
+            return null;
+        }
         return this.employeeDAO.updateEmployee(employee);
     }
 

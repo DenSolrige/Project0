@@ -69,6 +69,9 @@ public class ExpenseServiceImpl implements ExpenseService{
 
     @Override
     public Expense updateExpense(Expense expense) {
+        if(this.expenseDAO.getExpenseById(expense.getId()) == null){
+            return null;
+        }
         if(this.expenseDAO.getExpenseById(expense.getId()).getExpenseStatus() != ExpenseStatus.Pending
             || expense.getExpenseValue() < 0){ //move expense value check to handler
             return null;
