@@ -22,17 +22,29 @@ public class ExpenseDaoTests {
     @BeforeAll
     static void setup(){
         try(Connection conn = ConnectionUtil.createConnection()){
-            String sql = "create table expense(\n" +
+            String sql = "drop table if exists expense;\n" +
+                    "drop table if exists employee;\n" +
+                    "\n" +
+                    "create table employee(\n" +
+                    "\n" +
+                    "\tid serial primary key,\n" +
+                    "\tfirst_name varchar(100) not null,\n" +
+                    "\tlast_name varchar(100) not null\n" +
+                    "\t\n" +
+                    ");\n" +
+                    "\n" +
+                    "create table expense(\n" +
                     "\n" +
                     "\tid serial primary key,\n" +
                     "\texpense_status varchar(20) not null,\n" +
                     "\tdescription varchar(400) not null,\n" +
                     "\texpense_type varchar(20) not null,\n" +
-                    "\tissuer_id int not null,\n" +
-                    "\texpense_value int not null check(expense_value >= 0),\n" +
-                    "\t\n" +
-                    "\tconstraint fk_issuer_id foreign key (issuer_id) references employee(id)\n" +
-                    ");";
+                    "\tissuer_id int references employee(id) not null,\n" +
+                    "\texpense_value int not null check(expense_value >= 0)\n" +
+                    "\n" +
+                    ");\n" +
+                    "\n" +
+                    "insert into employee values(default,'Bob','Bobson');";
 
             Statement statement = conn.createStatement();
             statement.execute(sql);

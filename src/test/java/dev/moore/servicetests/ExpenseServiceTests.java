@@ -44,7 +44,7 @@ public class ExpenseServiceTests {
         ExpenseDaoPostgres expenseDaoPostgres = Mockito.mock(ExpenseDaoPostgres.class);
         Expense expense = new Expense("Bought a taco", ExpenseType.Food,1,7);
         expense.setExpenseStatus(ExpenseStatus.Approved);
-        Mockito.when(expenseDaoPostgres.updateExpense(expense)).thenReturn(expense); //show that the service will still return false even if DAO doesn't
+        Mockito.when(expenseDaoPostgres.updateExpense(expense)).thenReturn(expense);
         Mockito.when(expenseDaoPostgres.getExpenseById(expense.getId())).thenReturn(expense);
         ExpenseService expenseService = new ExpenseServiceImpl(expenseDaoPostgres);
 

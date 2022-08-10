@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92ec5af3-9434-403e-8eb1-cf4ced52fb94" name="Changes" comment="added expense postgres dao and nested route">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/expenses/AddExpenseToEmployeeHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/dev/moore/servicetests/ExpenseServiceTests.java" afterDir="false" />
+    <list default="true" id="92ec5af3-9434-403e-8eb1-cf4ced52fb94" name="Changes" comment="All known constraints satisfied">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/app/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/expenses/AddExpenseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/expenses/AddExpenseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/expenses/ApproveExpenseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/expenses/ApproveExpenseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/expenses/DeleteExpenseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/expenses/DeleteExpenseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/expenses/DenyExpenseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/handlers/expenses/DenyExpenseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/services/ExpenseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/services/ExpenseServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/moore/daos/EmployeeDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/moore/daos/EmployeeDaoPostgres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dev/moore/daotests/EmployeeDaoTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dev/moore/daotests/EmployeeDaoTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dev/moore/servicetests/ExpenseServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dev/moore/servicetests/ExpenseServiceTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +53,7 @@
       <recent name="dev.moore.handlers.employees" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.ExpenseServiceTests.expenses_start_as_pending_test">
+  <component name="RunManager" selected="Gradle.ExpenseDaoTests">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dev.moore.app.App" />
       <module name="Project0.main" />
@@ -72,29 +66,6 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration name="ConnectionTests (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;dev.moore.smoketests.ConnectionTests&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
     </configuration>
     <configuration name="EmployeeDaoTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -142,7 +113,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ExpenseServiceTests.expenses_start_as_pending_test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ExpenseServiceTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -155,7 +126,30 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;dev.moore.servicetests.ExpenseServiceTests.expenses_start_as_pending_test&quot;" />
+            <option value="&quot;dev.moore.servicetests.ExpenseServiceTests&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="ExpenseServiceTests.expenses_cant_be_negative" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;dev.moore.servicetests.ExpenseServiceTests.expenses_cant_be_negative&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -167,11 +161,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.ExpenseServiceTests.expenses_start_as_pending_test" />
         <item itemvalue="Gradle.ExpenseDaoTests" />
         <item itemvalue="Gradle.EmployeeDaoTests" />
-        <item itemvalue="Gradle.ConnectionTests (1)" />
+        <item itemvalue="Gradle.ExpenseServiceTests" />
         <item itemvalue="Application.App" />
+        <item itemvalue="Gradle.ExpenseServiceTests.expenses_cant_be_negative" />
       </list>
     </recent_temporary>
   </component>
@@ -212,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659645505418</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="All known constraints satisfied">
+      <created>1659991625698</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1659991625698</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -231,7 +232,8 @@
     <MESSAGE value="Everything! Missing nested routes" />
     <MESSAGE value="Missing nested routes and ExpenseDaoPostgres" />
     <MESSAGE value="added expense postgres dao and nested route" />
-    <option name="LAST_COMMIT_MESSAGE" value="added expense postgres dao and nested route" />
+    <MESSAGE value="All known constraints satisfied" />
+    <option name="LAST_COMMIT_MESSAGE" value="All known constraints satisfied" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

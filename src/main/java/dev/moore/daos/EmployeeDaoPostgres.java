@@ -96,12 +96,18 @@ public class EmployeeDaoPostgres implements EmployeeDAO{
     @Override
     public boolean deleteEmployeeById(int id) {
         try(Connection conn = ConnectionUtil.createConnection()){
+            String expenseDeleteSql = "delete from expense where issuer_id = ?";
+            PreparedStatement edPS = conn.prepareStatement(expenseDeleteSql);
+            edPS.setInt(1,id);
+            edPS.execute();
+
             String sql = "delete from employee where id = ?";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setInt(1,id);
             ps.execute();
+
+
             return true;
-            //return ps.execute(sql); maybe?
         }catch (SQLException e){
             e.printStackTrace();
             return false;
